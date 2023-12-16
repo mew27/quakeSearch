@@ -32,3 +32,7 @@
     width: 20px;
     height: 20px;
 }
+
+#glassSvg:hover {
+    cursor: pointer;
+}
