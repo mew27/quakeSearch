@@ -11,7 +11,7 @@ function SearchBar() {
     let [query, setQuery] = useState("")
     
     let map = useMap()
-
+    
     useEffect(() => {
         if (query !== "") {
             fetch(nominatim_api + `q=${query}&format=jsonv2`).then((response) => response.json()).then((data) => {
@@ -28,13 +28,15 @@ function SearchBar() {
             <div className="SearchBarContainer">
                 <div className="SearchBar">
                 <input className="SearchBarInput" type="text" placeholder="Cerca località..." value={searchBarText} onChange={(evt) => {
+                    //evt.preventDefault()
                     setSearchBarText(evt.target.value)
                 }} onKeyDown={(evt) => {
                     if (evt.key == 'Enter') {
                         setQuery(searchBarText)
                     }
                 }}></input>
-                <img id="glassSvg" src={MagnifyingGlass} onClick={() => {
+                <img id="glassSvg" src={MagnifyingGlass} onClick={(evt) => {
+                    //evt.preventDefault()
                     setQuery(searchBarText)
                 }}></img>    
                 </div>  

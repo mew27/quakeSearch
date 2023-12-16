@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import './App.css'
 
 import { MapContainer, TileLayer, useMap } from 'react-leaflet'
@@ -21,8 +22,8 @@ function App() {
   return (
     <>
       <MapContainer center={[41.902, 12.496]} zoom={10} zoomControl={false}>
+        {createPortal(<SearchBar></SearchBar>, document.getElementById("root")!)}
         <Geolocation></Geolocation>
-        <SearchBar></SearchBar>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
