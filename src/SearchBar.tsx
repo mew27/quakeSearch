@@ -27,14 +27,16 @@ function SearchBar() {
         <>
             <div className="SearchBarContainer">
                 <div className="SearchBar">
-                <input className="SearchBarInput" type="text" placeholder="Cerca località..." value={searchBarText} onChange={(evt) => {
-                    //evt.preventDefault()
-                    setSearchBarText(evt.target.value)
-                }} onKeyDown={(evt) => {
-                    if (evt.key == 'Enter') {
-                        setQuery(searchBarText)
-                    }
-                }}></input>
+                <div>
+                    <input className="SearchBarInput" type="text" placeholder="Cerca località..." value={searchBarText} onChange={(evt) => {
+                        //evt.preventDefault()
+                        setSearchBarText(evt.target.value)
+                    }} onKeyDown={(evt) => {
+                        if (evt.key == 'Enter') {
+                            setQuery(searchBarText)
+                        }
+                    }}></input>
+                </div>
                 <img id="glassSvg" src={MagnifyingGlass} onClick={(evt) => {
                     //evt.preventDefault()
                     setQuery(searchBarText)
