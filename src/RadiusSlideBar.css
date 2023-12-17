@@ -47,9 +47,9 @@ input[type="range"]::-moz-range-thumb {
     height: 15px;
     border: 0;
     border-radius: 50%;
-    background: grey;
-    border-image-source: linear-gradient(90deg,var(--c) 50%,#ababab 0); 
+    background: #4285F4;    ;
+    border-image-source: linear-gradient(90deg, #7285F4 50%,white 0);
     border-image-slice: 1;
     border-image-width: 0 100vw;
-    border-image-outset: 0 calc(100vw + var(--g));
+    border-image-outset: 0 calc(100vw);
 }
