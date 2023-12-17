@@ -7,22 +7,26 @@ import { useMap } from 'react-leaflet'
 const nominatim_api = "https://nominatim.openstreetmap.org/search?"
 //const ingv_api = "https://webservices.ingv.it/fdsnws/event/1/query?"
 
-function SearchBar() {
-    let [searchBarText, setSearchBarText] = useState("")
-    let [query, setQuery] = useState("")
-    
-    let map = useMap()
-    
-    useEffect(() => {
-        if (query !== "") {
-            fetch(nominatim_api + `q=${query}&format=jsonv2`).then((response) => response.json()).then((data) => {
-                console.log("Received nominatim JSON...")
-                console.log(`${data[0]}`)
+interface SearchBarProps {
+    setLocation : (location : string) => void 
+}
 
-                map.setView([data[0].lat, data[0].lon])
-            }).catch((err) => {console.log("Error querying Openstreetmap Nominatim")})
-        }
-    }, [query, setQuery])
+function SearchBar(props : SearchBarProps) {
+    let [searchBarText, setSearchBarText] = useState("")
+    //let [query, setQuery] = useState("")
+    
+    // let map = useMap()
+    
+    // useEffect(() => {
+    //     if (query !== "") {
+    //         fetch(nominatim_api + `q=${query}&format=jsonv2`).then((response) => response.json()).then((data) => {
+    //             console.log("Received nominatim JSON...")
+    //             console.log(`${data[0]}`)
+
+    //             map.setView([data[0].lat, data[0].lon])
+    //         }).catch(() => {console.log("Error querying Openstreetmap Nominatim")})
+    //     }
+    // }, [query, setQuery])
 
     return (
         <>
@@ -33,14 +37,14 @@ function SearchBar() {
                         //evt.preventDefault()
                         setSearchBarText(evt.target.value)
                     }} onKeyDown={(evt) => {
-                        if (evt.key == 'Enter') {
-                            setQuery(searchBarText)
+                        if (evt.key == 'Enter' && searchBarText !== "") {
+                            props.setLocation(searchBarText)
                         }
                     }}></input>
                 </div>
                 <img id="glassSvg" src={MagnifyingGlass} onClick={(evt) => {
                     //evt.preventDefault()
-                    setQuery(searchBarText)
+                    props.setLocation(searchBarText)
                 }}></img>    
                 </div>  
             </div>

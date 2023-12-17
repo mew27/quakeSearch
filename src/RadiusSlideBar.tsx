@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./RadiusSlideBar.css"
 
-function RadiusSlideBar() {
+interface RadiusSlideBarProps {
+    setRadiusKm : (radiusKm : number) => void 
+}
+
+function RadiusSlideBar(props : RadiusSlideBarProps) {
     let [radiusKm, setRadiusKm] = useState(5);
+
+    useEffect(() => {
+        let timerID = setTimeout(() => props.setRadiusKm(radiusKm), 500)
+
+        return () => {clearTimeout(timerID)};
+    }, [radiusKm, setRadiusKm])
 
     return (
         <div className="radius-slidebar-container">

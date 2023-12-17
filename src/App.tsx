@@ -3,11 +3,11 @@ import { createPortal } from 'react-dom'
 import './App.css'
 
 import { MapContainer, TileLayer, useMap } from 'react-leaflet'
-import SearchBar from './SearchBar'
 import Overlay from './Overlay'
+import { Map } from 'leaflet' 
 
 function Geolocation() {
-  const map = useMap()
+  const map : Map = useMap()
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((pos) => {
