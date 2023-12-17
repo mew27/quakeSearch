@@ -28,8 +28,8 @@ function SearchBar() {
         <>
             <div className="SearchBarContainer">
                 <div className="SearchBar">
-                <div>
-                    <input className="SearchBarInput" type="text" placeholder="Cerca località..." value={searchBarText} onChange={(evt) => {
+                <div style={{width : "28em"}}>
+                    <input className="SearchBarInput" type="text" placeholder="Cerca terremoti avvenuti a..." value={searchBarText} onChange={(evt) => {
                         //evt.preventDefault()
                         setSearchBarText(evt.target.value)
                     }} onKeyDown={(evt) => {
