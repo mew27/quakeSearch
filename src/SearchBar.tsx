@@ -1,10 +1,10 @@
 import "./SearchBar.css"
 import MagnifyingGlass from "./assets/searchMagnifyGlass.svg"
 
-import { useEffect, useState } from 'react'
-import { useMap } from 'react-leaflet'
+import { useState } from 'react'
+//import { useMap } from 'react-leaflet'
 
-const nominatim_api = "https://nominatim.openstreetmap.org/search?"
+//const nominatim_api = "https://nominatim.openstreetmap.org/search?"
 //const ingv_api = "https://webservices.ingv.it/fdsnws/event/1/query?"
 
 interface SearchBarProps {
@@ -42,7 +42,7 @@ function SearchBar(props : SearchBarProps) {
                         }
                     }}></input>
                 </div>
-                <img id="glassSvg" src={MagnifyingGlass} onClick={(evt) => {
+                <img id="glassSvg" src={MagnifyingGlass} onClick={() => {
                     //evt.preventDefault()
                     props.setLocation(searchBarText)
                 }}></img>    
