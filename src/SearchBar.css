@@ -10,7 +10,7 @@
     /*width: 100%;*/
     /* min-width: 300px; */
     display: flex;
-    max-width: 95%;
+    max-width: 90%;
     background-color: white;
     border-radius: 1em;
     z-index: 401;
@@ -22,7 +22,7 @@
     text-align: center;
     font-size: 1em;
     border: 0px;
-    width: 100%;
+    width: 28em;
 }
 .SearchBarInput:focus {
     outline: 0;

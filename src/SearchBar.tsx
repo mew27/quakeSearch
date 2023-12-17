@@ -28,8 +28,7 @@ function SearchBar() {
         <>
             <div className="SearchBarContainer">
                 <div className="SearchBar">
-                <div>
-                    <input className="SearchBarInput" type="text" placeholder="Cerca località..." value={searchBarText} onChange={(evt) => {
+                    <input className="SearchBarInput" type="text" placeholder="Cerca terremoti avvenuti a.." value={searchBarText} onChange={(evt) => {
                         //evt.preventDefault()
                         setSearchBarText(evt.target.value)
                     }} onKeyDown={(evt) => {
@@ -37,7 +36,6 @@ function SearchBar() {
                             setQuery(searchBarText)
                         }
                     }}></input>
-                </div>
                 <img id="glassSvg" src={MagnifyingGlass} onClick={(evt) => {
                     //evt.preventDefault()
                     setQuery(searchBarText)
