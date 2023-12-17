@@ -4,6 +4,7 @@ import './App.css'
 
 import { MapContainer, TileLayer, useMap } from 'react-leaflet'
 import SearchBar from './SearchBar'
+import Overlay from './Overlay'
 
 function Geolocation() {
   const map = useMap()
@@ -22,7 +23,7 @@ function App() {
   return (
     <>
       <MapContainer center={[41.902, 12.496]} zoom={10} zoomControl={false}>
-        {createPortal(<SearchBar></SearchBar>, document.getElementById("root")!)}
+        {createPortal(<Overlay></Overlay>, document.getElementById("root")!)}
         <Geolocation></Geolocation>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

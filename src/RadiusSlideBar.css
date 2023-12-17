@@ -1,0 +1,54 @@
+.radius-slidebar-container {
+    position: absolute;
+    z-index: 400;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.radius-slidebar {
+    outline: none;
+    transform-origin: center;
+    transform: rotate(-90deg);
+    background: white;
+    box-shadow: -10px 5px 5px grey;
+    border-radius: 20px;
+    width: 100px;
+    appearance: none;
+    overflow: hidden;
+}
+
+.number-container {
+    background-color: white;
+    color: black;
+    border-radius: 10%;
+    width: 5em;
+    text-align: center;
+    margin-top: 50px;;
+}
+/* Chrome, Edge, Safari, Opera */
+input[type="range" i]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 0;
+    border-radius: 50%;
+    background: #4285F4;    ;
+    border-image-source: linear-gradient(90deg, #7285F4 50%,white 0);
+    border-image-slice: 1;
+    border-image-width: 0 100vw;
+    border-image-outset: 0 calc(100vw);
+}
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border: 0;
+    border-radius: 50%;
+    background: grey;
+    border-image-source: linear-gradient(90deg,var(--c) 50%,#ababab 0); 
+    border-image-slice: 1;
+    border-image-width: 0 100vw;
+    border-image-outset: 0 calc(100vw + var(--g));
+}

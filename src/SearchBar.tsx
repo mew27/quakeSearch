@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { useMap } from 'react-leaflet'
 
 const nominatim_api = "https://nominatim.openstreetmap.org/search?"
+//const ingv_api = "https://webservices.ingv.it/fdsnws/event/1/query?"
 
 function SearchBar() {
     let [searchBarText, setSearchBarText] = useState("")
