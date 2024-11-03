@@ -45,7 +45,7 @@ function Overlay() {
         const now = new Date(Date.now())
         const month     : number = mod(now.getMonth() - 1, 12) 
         const month_str : string = numToStringFormat(month)
-        const day_str   : string = numToStringFormat(now.getDay())
+        const day_str   : string = numToStringFormat(now.getDate())
         const year      : number = (now.getMonth() - 1) > 0 ? now.getFullYear() : now.getFullYear() - 1  
 
         const http_response      = await fetch(ingv_api + `lat=${lat}&lon=${lon}&maxradiuskm=${radiusKm}&starttime=${year}-${month_str}-${day_str}T00:00:00`)
